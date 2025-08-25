@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutPrincipal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/txtTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#00BCD4"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Sistema de ubicación GPS"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Etiqueta Latitud -->
+    <TextView
+        android:id="@+id/lblLatitud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:text="Latitud:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtTitulo" />
+
+    <!-- Campo Latitud -->
+    <EditText
+        android:id="@+id/txt_Latitud"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="6dp"
+        android:inputType="numberDecimal"
+        android:hint="Ej: -1.234"
+        app:layout_constraintStart_toStartOf="@+id/lblLatitud"
+        app:layout_constraintTop_toBottomOf="@+id/lblLatitud" />
+
+    <!-- Etiqueta Longitud -->
+    <TextView
+        android:id="@+id/lblLongitud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
+        android:text="Longitud:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtTitulo" />
+
+    <!-- Campo Longitud -->
+    <EditText
+        android:id="@+id/txt_Longitud"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="6dp"
+        android:hint="Ej: -79.876"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="@+id/lblLongitud"
+        app:layout_constraintTop_toBottomOf="@+id/lblLongitud" />
+
+    <!-- Fragmento del mapa -->
+    <fragment
+        android:id="@+id/mapaGoogle"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        app:layout_constraintTop_toBottomOf="@id/txt_Latitud"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
